@@ -5,10 +5,10 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    int silnia = 1;
-    for(int i=1;i<=n;i++){
-        silnia *= i;
+    int i=0;
+    while(i*i <= n){
+        i++;
     }
-    printf("silnia %d\n", silnia);
+    printf("wynik %d\n", i-1);
     return 0;
 }
