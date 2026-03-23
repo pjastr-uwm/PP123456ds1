@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//zadanie 7_7
 int calculateSquareRootFloor(int n){
     int i=0;
     while(i*i <=n){
