@@ -1,25 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//zadanie 7_7
-int calculateSquareRootFloor(int n){
-    int i=0;
-    while(i*i <=n){
-        i++;
-    }
-    return i-1;
+int calculateFactorialRecursively(int n){
+    if (n==0)
+        return 1;
+    return n* calculateFactorialRecursively(n-1);
 }
+
 
 int main()
 {
-    printf("%d\n", calculateSquareRootFloor(0));
-    printf("%d\n", calculateSquareRootFloor(1));
-    printf("%d\n", calculateSquareRootFloor(2));
-    printf("%d\n", calculateSquareRootFloor(3));
-    printf("%d\n", calculateSquareRootFloor(4));
-
-    printf("%d\n", calculateSquareRootFloor(24));
-    printf("%d\n", calculateSquareRootFloor(25));
-    printf("%d\n", calculateSquareRootFloor(26));
+    printf("%d\n", calculateFactorialRecursively(0));
+    printf("%d\n", calculateFactorialRecursively(1));
+    printf("%d\n", calculateFactorialRecursively(5));
     return 0;
 }
