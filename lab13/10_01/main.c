@@ -13,7 +13,7 @@ void findMaxValue(int numbers[], int size){
 
 int main()
 {
-    int tab[] = {3,4,-2,8,7};
+    int tab[] = {-3,-4,-2,-8,-7};
     printf("%p\n", tab);
     findMaxValue(tab, 5);
     return 0;
