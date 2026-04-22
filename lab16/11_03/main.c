@@ -21,6 +21,9 @@ int countVow(char txt[]){
     return counter;
 }
 
+
+
+
 int main()
 {
     printf("%d\n", countVow("informatyka"));
