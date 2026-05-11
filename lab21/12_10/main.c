@@ -1,10 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void copyArr2D(int n, int m, int ** tab1, int **tab2){
+void swap(int * p1, int * p2){
+    int temp = * p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+void revRowArr(int n, int m, int **tab){
     for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            tab2[i][j] = tab1[i][j];
+        for(int j=0;j<m/2;j++){
+            swap(&tab[i][j], &tab[i][m-1-j]);
         }
     }
 }
@@ -21,23 +27,13 @@ void printTable(int n, int m, int ** tab){
 
 int main()
 {
-    //int tab1[2][3] = {{3,4,5},{-5,6,9}};
-    //int tab2[2][3] = {{2,-9,3},{1,4,-9}};
     int ** tab1 = malloc(2*sizeof(int*));
     tab1[0] = malloc(3*sizeof(int));
     tab1[1] = malloc(3*sizeof(int));
     tab1[0][0] =  3; tab1[0][1] =  4; tab1[0][2] =  5;
     tab1[1][0] = -5; tab1[1][1] =  6; tab1[1][2] =  9;
-    int ** tab2 = malloc(2*sizeof(int*));
-    tab2[0] = malloc(3*sizeof(int));
-    tab2[1] = malloc(3*sizeof(int));
-    tab2[0][0] =  2; tab2[0][1] = -9; tab2[0][2] =  3;
-    tab2[1][0] =  1; tab2[1
-    ][1] =  4; tab2[1][2] = -9;
     printTable(2,3,tab1);
-    printTable(2,3,tab2);
-    copyArr2D(2,3,tab1, tab2);
+    revRowArr(2,3,tab1);
     printTable(2,3,tab1);
-    printTable(2,3,tab2);
     return 0;
 }
